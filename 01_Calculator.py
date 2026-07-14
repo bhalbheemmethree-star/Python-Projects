@@ -4,9 +4,9 @@ print("")
 print("")
 print("")
 
-choice = "Y"
-
 History = []
+
+choice = "Y"
 
 while choice == "Y":
     print("==============================")
@@ -21,6 +21,8 @@ while choice == "Y":
     menu = int(input("choose an option:"))
 
     if menu == 1:
+
+
         x = float(input("Enter First number :"))
         operation = input("Enter Operation:")
         y = float(input("Enter Second number :"))
@@ -57,19 +59,22 @@ while choice == "Y":
                 print("cannot divisible by zero")
             else:
                 result = x%y
-                result_text = f"{x} + {y} = {result}"
+                result_text = f"{x} % {y} = {result}"
                 History.append(result_text)
                 print(f"{x} % {y} = {result}")
 
         elif (operation == "//"):
-            result = x//y
-            result_text = f"{x} + {y} = {result}"
-            History.append(result_text)
-            print(f"{x} // {y} = {result}")
+            if y == 0:
+                print("cannot divisible by zero")
+            else:
+                result = x//y
+                result_text = f"{x} // {y} = {result}"
+                History.append(result_text)
+                print(f"{x} // {y} = {result}")
 
         elif (operation == "**"):
             result = x**y
-            result_text = f"{x} + {y} = {result}"
+            result_text = f"{x} ** {y} = {result}"
             History.append(result_text)
             print(f"{x} ** {y} = {result}")
 
@@ -86,11 +91,16 @@ while choice == "Y":
                 print(item)
 
     elif menu == 3:
-        print()
+        History.clear()
+        print("History cleared Successfully!")
 
+    elif menu == 4:
+        break
 
+    else:
+        print("Invalid menu choice")
 
-    choice = input("Do you want another calculation? (Y/N): ")
+    choice = input("Do you want another calculation? (Y/N): ").upper()
 
 print("\nThank you for using  Calculator!")
 
