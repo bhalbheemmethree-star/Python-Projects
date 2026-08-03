@@ -23,5 +23,4 @@ while True:
         print(f"correct! The number was {secret_number}.")
         print(F"Attempts: {attempts}")
         break
-
     
